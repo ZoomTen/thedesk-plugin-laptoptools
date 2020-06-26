@@ -6,11 +6,15 @@ PLUGIN_NAME = LaptopToolsPlugin
 ##### source files ####
 
 SOURCES += \
+    pane/graph/batterygraph.cpp \
     pane/laptoptoolspane.cpp \
+    pane/list/applist.cpp \
     plugin.cpp
 
 HEADERS += \
+    pane/graph/batterygraph.h \
     pane/laptoptoolspane.h \
+    pane/list/applist.h \
     plugin.h
 
 DISTFILES += \
@@ -21,6 +25,9 @@ DISTFILES += \
 # core library
 QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+# additional functionality
+QT       += charts dbus
 
 # the-libs
 QT       += thelib
@@ -68,4 +75,6 @@ unix {
 }
 
 FORMS += \
-    pane/laptoptoolspane.ui
+    pane/graph/batterygraph.ui \
+    pane/laptoptoolspane.ui \
+    pane/list/applist.ui

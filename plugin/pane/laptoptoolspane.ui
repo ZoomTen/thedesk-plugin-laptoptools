@@ -107,7 +107,7 @@
           </widget>
          </item>
          <item row="4" column="0">
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="timeLabel">
            <property name="text">
             <string>Updated 10:30:05</string>
            </property>
@@ -129,9 +129,9 @@
         </layout>
        </item>
        <item>
-        <widget class="QStackedWidget" name="graphStage">
-         <widget class="QWidget" name="page"/>
-         <widget class="QWidget" name="page_2"/>
+        <widget class="tStackedWidget" name="graphStage">
+         <widget class="BatteryGraph" name="batterygraph"/>
+         <widget class="AppList" name="applist"/>
         </widget>
        </item>
       </layout>
@@ -141,6 +141,15 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>tStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header location="global">tstackedwidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>switchingFrame(int)</signal>
+   </slots>
+  </customwidget>
   <customwidget>
    <class>tTitleLabel</class>
    <extends>QLabel</extends>
@@ -153,6 +162,18 @@
    <class>tSwitch</class>
    <extends>QPushButton</extends>
    <header location="global">tswitch.h</header>
+  </customwidget>
+  <customwidget>
+   <class>BatteryGraph</class>
+   <extends>QWidget</extends>
+   <header>pane/graph/batterygraph.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AppList</class>
+   <extends>QWidget</extends>
+   <header>pane/list/applist.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
